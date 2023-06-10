@@ -1,7 +1,8 @@
-import Image from 'next/image'
-import Card from '@/components/Card'
+
+// import Card from '@/components/Card'
 import NavigationCard from '@/components/NavigationCard'
 import PostFormCard from '@/components/PostFormCard'
+import PostCard from '@/components/PostCard'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
 
         <div className='grow'>
           <PostFormCard/>
-          <Card>first post here</Card>
+          <PostCard/>
         
           </div>
 

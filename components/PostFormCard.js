@@ -1,4 +1,5 @@
 import Card from "./Card"
+import Avatar from "./Avatar"
 
 
 const PostFormCard = () => {
@@ -6,10 +7,7 @@ const PostFormCard = () => {
     <Card>
        <div className="flex gap-2">
         <div>
-        <div className="w-10 rounded-md overflow-hidden">
-       <img src="https://www.whatsappimages.in/wp-content/uploads/2022/05/Best-Quality-mahakal-Images.jpg" alt="pp"/>
-
-       </div>
+        <Avatar/>
         </div>
         
         
