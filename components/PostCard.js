@@ -77,7 +77,7 @@ export default function PostCard(){
 
     </div>
    </div>
-   <div>
+   {/* <div> */}
     <div className="mt-5 flex gap-9 ">
 <button className="flex gap-2 items-center">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -111,7 +111,7 @@ export default function PostCard(){
 
 
 
-  <div className="border grow rounded-full">
+  <div className="border grow rounded-full relative">
   <textarea className="border grow  w-full p-3 px-4 overflow-hidden h-12 rounded-full" placeholder="leave a comment"></textarea>
 <button className="absolute top-3 right-3 text-gray-400">
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -122,7 +122,7 @@ export default function PostCard(){
 </button>
 
   
-</div>
+
   </div>
    </div>
 </Card>
