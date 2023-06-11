@@ -24,11 +24,11 @@ export default function ProfilePage(){
             <div className="h-36 overflow-hidden flex justify-center items-center">
             <img src="https://www.thoughtco.com/thmb/EXpjUAx2ZEgV64eKcsAsX7Ucl6w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages_482194715-56a1329e5f9b58b7d0bcf666.jpg" alt="shiva"/>
             </div>
-            <div className=" absolute top-24 left-4">
-            <Avatar size={'lg'}/>
+            <div className=" absolute top-24 left-2">
+            <Avatar size={'big'}/>
             </div>
             <div className="p-4">
-            <div className="pl-20">
+            <div className="pl-28">
              <h1 className="text-3xl font-bold">Ayush Srivastava </h1>
               <div className="text-gray-500">Delhi, India</div>
             
