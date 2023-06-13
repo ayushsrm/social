@@ -12,7 +12,7 @@ export default function Login(){
     const supabase = useSupabaseClient();
     async function signInWithGoogle() {
        
-        const { data, error } = await supabase.auth.signInWithOAuth({
+        const { data } = await supabase.auth.signInWithOAuth({
           provider: 'google',
         })
       }
