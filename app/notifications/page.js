@@ -14,7 +14,7 @@ export default function Notification(){
                     <Avatar/>
                     </Link>
                     <div>
-                        <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>John Doe</Link>
+                        <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>Amrit Anand</Link>
                          liked
                         <Link href={'/Profile'} className={'ml-1 text-socialBlue hover:underline'}>your photo</Link>
                     </div>
@@ -22,7 +22,7 @@ export default function Notification(){
                 <div className = 'flex gap-2 items-center border-b border-b-gray-100 p-4'>
                     <Avatar/>
                     <div>
-                    <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>John Doe</Link>
+                    <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>Ayush Srivastava</Link>
                      liked 
                      <Link href={'/Profile'} className={'ml-1 text-socialBlue hover:underline'}>your photo</Link>
                     </div>
@@ -30,7 +30,7 @@ export default function Notification(){
                 <div className = 'flex gap-2 items-center border-b border-b-gray-100 p-4'>
                     <Avatar/>
                     <div>
-                    <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>John Doe</Link>
+                    <Link href={'/Profile'} className={"font-semibold mr-1 hover:underline"}>Jay Prakash</Link>
                      liked 
                      <Link href={'/Profile'} className={'ml-1 text-socialBlue hover:underline'}>your photo</Link>
                     </div>

@@ -4,6 +4,7 @@ import Avatar from "@/components/Avatar";
 import Card from "@/components/Card";
 import Image from "next/image";
 import {useState} from "react";
+import Link from "next/link";
 
 export default function PostCard(){
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +14,20 @@ export default function PostCard(){
   
    <div className="flex gap-3">
  <div>
-  <Avatar/>
+ <Link href={'/Profile'}>
 
- </div>
+  <span className="cursor-pointer">
+  <Avatar/>
+  </span>
+ </Link>
+  </div>
  <div className="grow">
    <p>
-     <a className="font-semibold">Amrit Anand </a>shared a <a className="text-socialBlue">post</a>
+   <Link href={'/Profile'}>
+     <span className=" mr-1 font-semibold cursor-pointer hover:underline">Amrit Anand
+      </span>
+      </Link>
+      shared a<a className="text-socialBlue"> post</a>
      </p>
    <p className="text-gray-500 text-sm">
     Few seconds ago
