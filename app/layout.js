@@ -1,5 +1,10 @@
+'use client';
+import { createPagesBrowserClient} from '@supabase/auth-helpers-nextjs';
+
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,9 +14,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const initialstate=()=>createPagesBrowserClient();
+  const[supabaseClient]= useState(initialstate);
   return (
     <html lang="en">
+      <SessionContextProvider
+      supabaseClient={supabaseClient}
+      initialSession={children.initialSession}
+      
+      >
       <body className={inter.className}>{children}</body>
+      </SessionContextProvider>
     </html>
   )
 }
