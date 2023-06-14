@@ -5,6 +5,13 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { useState } from 'react';
+import TimeAgo from 'javascript-time-ago'
+
+import en from 'javascript-time-ago/locale/en.json'
+
+
+TimeAgo.addDefaultLocale(en)
+
 
 const inter = Inter({ subsets: ['latin'] })
 
