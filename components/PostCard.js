@@ -3,12 +3,14 @@
 import Avatar from "@/components/Avatar";
 import Card from "@/components/Card";
 import Image from "next/image";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import Link from "next/link";
+import ReactTimeAgo from "react-time-ago";
+import { UserContext } from "./context/UserContext.js";
 
-export default function PostCard(){
+export default function PostCard({content,created_at,profile:authorprofile}){
   const [isOpen, setIsOpen] = useState(false);
- 
+  const {profile:myprofile}= useContext(UserContext);
     return(
         <Card> 
   
@@ -17,20 +19,20 @@ export default function PostCard(){
  <Link href={'/Profile'}>
 
   <span className="cursor-pointer">
-  <Avatar/>
+  <Avatar url={authorprofile.avatar}/>
   </span>
  </Link>
   </div>
  <div className="grow">
    <p>
    <Link href={'/Profile'}>
-     <span className=" mr-1 font-semibold cursor-pointer hover:underline">Amrit Anand
+     <span className=" mr-1 font-semibold cursor-pointer hover:underline">{authorprofile.name}
       </span>
       </Link>
       shared a<a className="text-socialBlue"> post</a>
      </p>
    <p className="text-gray-500 text-sm">
-    Few seconds ago
+    <ReactTimeAgo date={created_at}/>
     </p>
  </div>
  <div>
@@ -79,7 +81,7 @@ export default function PostCard(){
  <div>
  
     <p className="my-2 text-sm">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur nihil debitis deleniti. Impedit, eligendi. Dicta ipsam ducimus neque quasi? Natus aliquam non obcaecati dolorem vel nihil fugiat dolore alias. Repudiandae ex laborum cupiditate officiis.
+   {content}
     </p>
     <div className="rounded-md overflow-hidden">
     <img src="/shiva.jpeg" alt="shiva"/>
@@ -114,7 +116,7 @@ export default function PostCard(){
 
   <div className="flex mt-4 gap-3">
   <div>
-    <Avatar/>
+    <Avatar url={myprofile?.avatar}/>
   </div>
 
 

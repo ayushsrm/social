@@ -1,18 +1,46 @@
 import Card from "./Card"
 import Avatar from "./Avatar"
+import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react"
+import { useContext, useState } from "react";
+import { UserContext } from "./context/UserContext.js";
 
 
-const PostFormCard = () => {
+const PostFormCard = (onPost) => {
+
+const [content,setContent] = useState('');
+const supabase = useSupabaseClient();
+const session = useSession();
+const profile =useContext(UserContext);
+
+
+function createPost(){
+  supabase.from('posts').insert({
+    author : session.user.id,
+    content,
+  }).then(Response =>{
+    if(!Response.error){
+      setContent('');
+      if(onPost){
+        onPost();
+      }
+    }
+  })
+}
   return (
     <Card>
        <div className="flex gap-2">
         <div>
-        <Avatar/>
+        <Avatar url={profile.avatar}/>
         </div>
-        
-        
-        <textarea className="grow p-3 h-14" placeholder={'whats on your mind'}/>
-       </div>
+        {profile&&(
+ <textarea 
+ value={content}
+ onChange={e=> setContent(e.target.value)}
+ className="grow p-3 h-14" placeholder={`whats on your mind ${profile.name}?`}/>
+ 
+        )}
+        </div>
+       
 
        <div className="flex gap-5 items-center mt-2">
         <div>
@@ -42,7 +70,7 @@ const PostFormCard = () => {
         </div>
 
         <div className="grow text-right">
-            <button className="bg-blue-800 text-white px-6 py-1 rounded-md" >
+            <button onClick={createPost} className="bg-blue-800 text-white px-6 py-1 rounded-md" >
                 Share
             </button>
         </div>
