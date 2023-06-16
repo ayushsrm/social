@@ -34,7 +34,7 @@ useEffect(()=>{
 },[session?.user?.id])
   
 function fetchposts(){
-  supabase.from('posts').select('id,content,created_at,profile(id,avatar,name)').order('created_at',{ascending:false }).then(result =>{
+  supabase.from('posts').select('id,content,created_at, photos ,profile(id,avatar,name)').order('created_at',{ascending:false }).then(result =>{
     setPosts(result.data);
   })
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import Avatar from "@/components/Avatar";
+
 import Card from "@/components/Card";
 import Image from "next/image";
 import {useContext, useState} from "react";
@@ -8,7 +9,8 @@ import Link from "next/link";
 import ReactTimeAgo from "react-time-ago";
 import { UserContext } from "./context/UserContext.js";
 
-export default function PostCard({content,created_at,profile:authorprofile}){
+
+export default function PostCard({content,created_at,photos,profile:authorprofile}){
   const [isOpen, setIsOpen] = useState(false);
   const {profile:myprofile}= useContext(UserContext);
     return(
@@ -80,13 +82,25 @@ export default function PostCard({content,created_at,profile:authorprofile}){
  </div>
  <div>
  
-    <p className="my-2 text-sm">
+    <p className="my-3 text-sm">
    {content}
     </p>
-    <div className="rounded-md overflow-hidden">
+    {photos?.length > 0 &&(
+
+<div className=" flex">
+    { photos.map(photo =>(
+      <div className=""> 
+        <img src={photo}  className="rounded-md" alt ="?"/>
+         </div>
+    ))
+    }
+    </div>
+    )}
+    
+    {/* <div className="rounded-md overflow-hidden">
     <img src="/shiva.jpeg" alt="shiva"/>
 
-    </div>
+    </div> */}
    </div>
    {/* <div> */}
     <div className="mt-5 flex gap-9 ">
